@@ -1,12 +1,12 @@
 <template>
-  <div class="col-sm-6">
+  <div class="">
       <div class="card border-success mb-3">
         <div class="card-header">
             {{ stock.name }}
             <small>(Prise: {{ stock.price }})</small>
         </div>
         <div class="card-body text-success">
-        <form class="form-row" style="text-align: end;">
+        <div class="form-row" style="text-align: end;">
             <div class="form-group col-md-8">
                 <input
                     type="number"
@@ -21,7 +21,7 @@
                     :disabled="quantity <= 0 || !Number.isInteger(quantity)"
                     >Buy</button>
             </div>
-        </form>
+        </div>
         </div>
     </div>
   </div>
@@ -42,8 +42,10 @@
                     stockPrice: this.stock.price,
                     quantity: this.quantity
                 }
-                console.log(order);
-                this.quantity = 0
+                this.$store.dispatch('buyStock', order);
+                this.quantity = 0;
+                return false;
+
             },
 
         }

@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row p-3" style="justify-content: space-between;">
       <app-stock
             v-for="stock in stocks" :key="stocks.id"
             :stock="stock"
@@ -9,6 +9,7 @@
 
 <script>
 import Stock from './Stock.vue';
+
     export default {
         components: {
             appStock: Stock

@@ -2,7 +2,7 @@
   <div class="container">
       <app-header></app-header>
       <div class="row p-3">
-          <div class="col-xs-12">
+          <div class="">
               <router-view></router-view>
           </div>
       </div>
